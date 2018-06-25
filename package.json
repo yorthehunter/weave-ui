@@ -7,7 +7,8 @@
   "author": "Brian Cleveland <yorthehunter>",
   "license": "UNLICENSED",
   "scripts": {
-    "build": "scss weave.scss dist/weave.css"
+    "build": "scss weave.scss dist/weave.css",
+    "minify": "postcss dist/weave.css > dist/weave.min.css"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
