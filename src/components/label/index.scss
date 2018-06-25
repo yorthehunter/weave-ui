@@ -1,6 +1,12 @@
 @import '../../core/index';
 
 @mixin weave-label {
+  // Defaults
+  --display-as: inline-flex;
+  --bg-color: var(--text-neutral-color);
+  --border-radius: var(--border-radius-default);
+  --font-color: #{$color-black};
+  
   // Default to medium size if no modifier added
   @include weave-label-md;
   // Default to neutral decoration if no modifier added
@@ -36,12 +42,6 @@
 }
 
 .weave-label {
-  // Defaults
-  --display-as: inline-flex;
-  --bg-color: var(--text-neutral-color);
-  --border-radius: var(--border-radius-default);
-  --font-color: #{$color-black};
-
   @include weave-label;
 }
 
