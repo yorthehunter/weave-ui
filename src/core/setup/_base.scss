@@ -1,0 +1,146 @@
+// Sets a default path for assets, typically used for custom webfonts
+$weave-asset-path: '../assets/' !default;
+
+// Optional inclusions
+// These options allow for parts of the compiled code to be turned on or off.
+// For example, if you are working in a legacy app and don't need to normalize
+// your browser styles because you already use another reset.css, then set that
+// option to false.
+
+// It's recommended for new apps or apps that don't use any other UI framework
+// to keep all options on.
+$weave-normalize-browser-styles--option: true !default;
+$weave-base-styles--option: true !default;
+$weave-utilities--option: true !default;
+
+// Lets us retrieve values from nested Sass maps
+// More info: https://css-tricks.com/snippets/sass/deep-getset-maps/
+// Sass maps: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+// Defaults
+:root {
+  --pt: initial;
+  --pb: initial;
+  --pl: initial;
+  --pr: initial;
+  --mt: initial;
+  --mb: initial;
+  --ml: initial;
+  --mr: initial;
+  --z-index: 1;
+  --elevation: initial;
+  --border-radius: initial;
+  --bg-color: currentColor;
+  --font-color: currentColor;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: currentColor;
+  --display-as: block;
+  --font-size: var(--type-size-f3);
+  --line-height: var(--component-line-height-f3);
+  --position: relative;
+  --text-align: left;
+}
+
+@mixin padding {
+  padding-top: var(--pt);
+  padding-bottom: var(--pb);
+  padding-left: var(--pl);
+  padding-right: var(--pr);
+}
+
+@mixin px {
+  padding-left: var(--px);
+  padding-right: var(--px);
+}
+
+@mixin py {
+  padding-top: var(--py);
+  padding-bottom: var(--py);
+}
+
+@mixin margin {
+  margin-top: var(--mt);
+  margin-bottom: var(--mb);
+  margin-left: var(--ml);
+  margin-right: var(--mr);
+}
+
+@mixin mx {
+  margin-left: var(--mx);
+  margin-right: var(--mx);
+}
+
+@mixin my {
+  margin-top: var(--my);
+  margin-bottom: var(--my);
+}
+
+@mixin border {
+  border-width: var(--border-width);
+  border-style: var(--border-style);
+  border-color: var(--border-color);
+}
+
+@mixin elevated {
+  z-index: var(--z-index);
+  box-shadow: var(--elevation);
+}
+
+@mixin rounded {
+  border-radius: var(--border-radius);
+}
+
+@mixin bg {
+  background-color: var(--bg-color);
+}
+
+@mixin color {
+  color: var(--font-color);
+}
+
+@mixin display-as {
+  display: var(--display-as);
+}
+
+@mixin typeset {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+@mixin clickable {
+  cursor: pointer;
+}
+
+@mixin unstyled-list {
+  list-style: none;
+}
+
+@mixin position {
+  position: var(--position);
+}
+
+@mixin text-align {
+  text-align: var(--text-align);
+}
+
+@mixin helper-text {
+  --font-size: var(--type-size-f1);
+  --line-height: var(--component-line-height-f1);
+  --color: var(--text-secondary-color);
+  font-weight: var(--font-weight-default);
+  @include color;
+  @include typeset;
+}
+
+@mixin secondary-text {
+  --color: var(--text-secondary-color);
+  @include color;
+  font-style: italic;
+}

@@ -1,0 +1,110 @@
+@import '../../core/index';
+
+// $table-row-border: 1px solid color(gray-light);
+// $table-row-bg--hover: color(black-10);
+// $table-row-bg--stripe: color(gray-lightest);
+// $table-row-bg--stripe-alternate: color(white);
+//
+// $table-padding--default: space(md) space(sm);
+// $table-padding--condensed: space(sm) space(sm);
+// $table-padding--none: 0;
+
+@mixin weave-table {
+  --font-size: var(--type-size-f2);
+  --line-height: var(--component-line-height-f2);
+  --text-align: left;
+  @include typeset;
+  @include text-align;
+  // Reset the default separation of table cells
+  border-collapse: collapse;
+
+  tr {
+    --border-width: 0;
+    --bg-color: #{$color-white-85};
+    @include border;
+    @include bg;
+
+    &:nth-child(odd) {
+      --bg-color: #{$color-white-85};
+    }
+
+    &:nth-child(even) {
+      --bg-color: #{$color-white-85};
+    }
+  }
+
+  th,
+  td {
+    --py: var(--spacing-md);
+    --px: var(--spacing-md);
+    @include py;
+    @include px;
+  }
+}
+
+.weave-table {
+  @include weave-table;
+}
+
+.weave-table--bordered {
+  > thead > tr,
+  > tbody > tr,
+  > tfoot > tr,
+  > tr {
+    --border-color: var(--color-neutral-2);
+    --border-width: 0 0 1px 0;
+  }
+}
+
+.weave-table--striped {
+  > thead > tr:nth-child(odd),
+  > tbody > tr:nth-child(odd),
+  > tfoot > tr:nth-child(odd),
+  > tr:nth-child(odd) {
+    --bg-color: #{$color-white};
+  }
+
+  > thead > tr:nth-child(even),
+  > tbody > tr:nth-child(even),
+  > tfoot > tr:nth-child(even),
+  > tr:nth-child(even) {
+    --bg-color: #{$color-gray-lightest};
+  }
+}
+
+.weave-table--hoverable {
+  > thead > tr:hover,
+  > tbody > tr:hover,
+  > tfoot > tr:hover,
+  > tr:hover {
+    --bg-color: var(--bg-transparent-lightest);
+  }
+}
+
+.weave-table--condensed {
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td,
+  > tr > td {
+    --py: var(--spacing-sm);
+    --px: var(--spacing-xs);
+  }
+}
+
+.weave-table--nopad {
+  > thead > tr > th,
+  > tbody > tr > th,
+  > tfoot > tr > th,
+  > tr > th,
+  > thead > tr > td,
+  > tbody > tr > td,
+  > tfoot > tr > td,
+  > tr > td {
+    --py: var(--spacing-none);
+    --px: var(--spacing-none);
+  }
+}

@@ -1,0 +1,70 @@
+// Color palette
+$color-mint-dark: #00807A;
+$color-mint: #00BDB4;
+$color-mint-light: #99E5E1;
+$color-mint-lightest: #D9F5F4;
+$color-watermelon: #F05D61;
+$color-watermelon-light: #F6B7B8;
+$color-watermelon-lightest: #FCE4E4;
+$color-kiwi: #9BC988;
+$color-kiwi-light: #D2E6C7;
+$color-kiwi-lightest: #EEF6EA;
+$color-tangerine: #FFB939;
+$color-grape: #9575CD;
+$color-banana: #FFEE7E;
+$color-banana-light: #FFFAD6;
+$color-blueberry: #2079A4;
+$color-gray-dark: #303039;
+$color-gray: #6C6C7A;
+$color-gray-light: #D5D5DD;
+$color-gray-lightest: #F7F7F9;
+$color-black: #000000;
+$color-black-75: rgba(0, 0, 0, .75);
+$color-black-50: rgba(0, 0, 0, .5);
+$color-black-25: rgba(0, 0, 0, .25);
+$color-black-10: rgba(0, 0, 0, .1);
+$color-white: #FFFFFF;
+$color-white-85: rgba(255, 255, 255, .85);
+$color-white-65: rgba(255, 255, 255, .65);
+$color-white-40: rgba(255, 255, 255, .4);
+$color-white-25: rgba(255, 255, 255, .25);
+
+// Defaults
+:root {
+  --text-color: #{$color-gray-dark};
+  --text-secondary-color: #{$color-gray};
+  --text-accent-color: #{$color-mint-dark};
+  --text-success-color: #{$color-mint-dark};
+  --text-error-color: #{$color-watermelon};
+  --text-warning-color: #{$color-watermelon};
+  --text-info-color: #{$color-grape};
+  --text-neutral-color: #{$color-gray};
+  --text-on-dark-bg: #{$color-white};
+  --text-on-light-bg: #{$color-black};
+
+  --link-color: #{$color-blueberry};
+
+  --accent-color: #{$color-mint-dark};
+  --success-color: #{$color-kiwi};
+  --error-color: #{$color-watermelon};
+  --info-color: #{$color-mint-lightest};
+  --warning-color: #{$color-banana};
+  --neutral-color: #{$color-gray-lightest};
+
+  --border-accent-color: #{$color-mint};
+  --border-success-color: #{$color-kiwi};
+  --border-error-color: #{$color-watermelon};
+  --border-info-color: #{$color-mint-lightest};
+  --border-warning-color: #{$color-tangerine};
+  --border-neutral-color: #{$color-gray-light};
+
+  --bg-transparent-dark: #{$color-black-75};
+  --bg-transparent-medium: #{$color-black-50};
+  --bg-transparent-light: #{$color-black-25};
+  --bg-transparent-lightest: #{$color-black-10};
+
+  --color-neutral-1: #{$color-gray-lightest};
+  --color-neutral-2: #{$color-gray-light};
+  --color-neutral-3: #{$color-gray};
+  --color-neutral-4: #{$color-gray-dark};
+}

@@ -1,0 +1,103 @@
+// Decoration / UI settings
+//
+
+:root {
+  --elevated-0: 0 0 0 rgba(0,0,0,0.0);
+  --elevated-1: 0 2px 5px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.12);
+  --elevated-2: 0 8px 17px rgba(0,0,0,0.16), 0 6px 20px rgba(0,0,0,0.19);
+  --elevated-3: 0 12px 15px rgba(0,0,0,0.24), 0 17px 50px rgba(0,0,0,0.19);
+  --elevated-4: 0 16px 28px rgba(0,0,0,0.22), 0 25px 55px rgba(0,0,0,0.21);
+  --elevated-5: 0 27px 24px rgba(0,0,0,0.20), 0 40px 77px rgba(0,0,0,0.22);
+}
+
+:root {
+  --border-radius-xs: 1px;
+  --border-radius-sm: 2px;
+  --border-radius-md: 3px;
+  --border-radius-lg: 4px;
+  --border-radius-xl: 8px;
+  --border-radius-pill: 100vw;
+  --border-radius-circle: 100%;
+  --border-neutral: 1px solid --border-neutral-color;
+}
+
+:root {
+  --disabled-opacity: .3;
+}
+
+// Defaults
+:root {
+  --border-radius-default: var(--border-radius-sm);
+}
+
+@mixin field {
+  @include bg;
+  @include color;
+  @include border;
+}
+
+@mixin weave-accent-field {
+  --bg-color: var(--accent-color);
+  --font-color: var(--text-on-dark-bg);
+  --border-width: 0;
+  @include field;
+}
+
+@mixin weave-error-field {
+  --bg-color: var(--error-color);
+  --font-color: var(--text-on-dark-bg);
+  --border-width: 0;
+  @include field;
+}
+
+@mixin weave-warning-field {
+  --bg-color: var(--warning-color);
+  --font-color: var(--text-on-light-bg);
+  --border-width: 0;
+  @include field;
+}
+
+@mixin weave-success-field {
+  --bg-color: var(--success-color);
+  --font-color: var(--text-on-light-bg);
+  --border-width: 0;
+  @include field;
+}
+
+@mixin weave-info-field {
+  --bg-color: var(--info-color);
+  --font-color: var(--text-on-light-bg);
+  --border-width: 0;
+  @include field;
+}
+
+@mixin weave-neutral-field {
+  --bg-color: var(--neutral-color);
+  --font-color: var(--text-on-light-bg);
+  --border-color: var(--border-neutral-color);
+  @include field;
+}
+
+.bg { @include bg; }
+.bg--accent  { --bg-color: var(--accent-color);  }
+.bg--neutral { --bg-color: var(--neutral-color); }
+.bg--success { --bg-color: var(--success-color); }
+.bg--warning { --bg-color: var(--warning-color); }
+.bg--info    { --bg-color: var(--info-color);    }
+.bg--error   { --bg-color: var(--error-color);   }
+
+.color { @include color; }
+.color--accent  { --font-color: var(--text-accent-color);  }
+.color--neutral { --font-color: var(--text-neutral-color); }
+.color--success { --font-color: var(--text-success-color); }
+.color--warning { --font-color: var(--text-warning-color); }
+.color--info    { --font-color: var(--text-info-color);    }
+.color--error   { --font-color: var(--text-error-color);   }
+
+.border { --border-width: 1px; @include border; }
+.border--accent  { --border-color: var(--border-accent-color);  }
+.border--neutral { --border-color: var(--border-neutral-color); }
+.border--success { --border-color: var(--border-success-color); }
+.border--warning { --border-color: var(--border-warning-color); }
+.border--info    { --border-color: var(--border-info-color);    }
+.border--error   { --border-color: var(--border-error-color);   }

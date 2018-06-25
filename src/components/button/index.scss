@@ -1,0 +1,130 @@
+@import '../../core/index';
+
+@mixin button {
+  // Defaults
+  --border-radius: var(--border-radius-default);
+  --display-as: inline-flex;
+  --font-color: #{$color-white};
+  --bg-color: #{$color-gray};
+  --bg-color-hover: #{lighten($color-gray, 10%)};
+  --elevation: var(--elevated-1);
+  --border-width: 0;
+  --font-size: var(--type-size-f2);
+  --line-height: var(--component-line-height-f2);
+  // Default to medium size if no modifier added
+  @include button-md;
+  @include transition(background-color, box-shadow, outline);
+  @include rounded;
+  @include elevated;
+  @include py;
+  @include px;
+  @include bg;
+  @include color;
+  @include border;
+  @include display-as;
+  @include typeset;
+  @include clickable;
+
+  text-transform: uppercase;
+  justify-content: center;
+
+  &.is-disabled {
+    cursor: not-allowed;
+    opacity: var(--disabled-opacity);
+  }
+
+  &:hover:not(.is-disabled):not(.weave-button--flat) {
+    --elevation: var(--elevated-2);
+  }
+
+  &:hover:not(.is-disabled) {
+    --bg-color: var(--bg-color-hover);
+  }
+}
+
+@mixin button-xs {
+  --py: var(--spacing-none);
+  --px: var(--spacing-sm);
+  --font-size: var(--type-size-f0);
+  --line-height: var(--component-line-height-f0);
+}
+
+@mixin button-sm {
+  --py: var(--spacing-xs);
+  --px: var(--spacing-md);
+  --font-size: var(--type-size-f1);
+  --line-height: var(--component-line-height-f1);
+}
+
+@mixin button-md {
+  --py: var(--spacing-sm);
+  --px: var(--spacing-lg);
+  --font-size: var(--type-size-f2);
+  --line-height: var(--component-line-height-f2);
+}
+
+@mixin button-lg {
+  --py: var(--spacing-md);
+  --px: var(--spacing-xl);
+  --font-size: var(--type-size-f3);
+  --line-height: var(--component-line-height-f3);
+}
+
+.weave-button {
+  @include button;
+}
+
+.weave-button:not(.weave-button--full-width) + .weave-button:not(.weave-button--full-width) {
+  @include mx;
+  --mx: var(--spacing-sm);
+}
+
+.weave-button--full-width {
+  width: 100%;
+}
+
+.weave-button--cta {
+  --bg-color: #{$color-watermelon};
+  --bg-color-hover: #{lighten($color-watermelon, 10%)};
+}
+
+.weave-button--primary {
+  --bg-color: #{$color-blueberry};
+  --bg-color-hover: #{lighten($color-blueberry, 10%)};
+}
+
+.weave-button--secondary {
+  --font-color: #{$color-black};
+  --bg-color: #{$color-white};
+  --bg-color-hover: #{$color-white};
+}
+
+.weave-button--flat {
+  --font-color: var(--link-color);
+  --bg-color: transparent;
+  --elevation: var(--elevated-0);
+  --bg-color-hover: #{$color-black-10};
+}
+
+.weave-button--xs { @include button-xs; }
+.weave-button--sm { @include button-sm; }
+.weave-button--md { @include button-md; }
+.weave-button--lg { @include button-lg; }
+
+.weave-button--responsive {
+  @include viewport-equal-to-and-smaller-than('full') {
+    @include button-lg;
+  };
+
+  @include viewport-equal-to-and-smaller-than('lg') {
+    @include button-md;
+  };
+
+  @include viewport-equal-to-and-smaller-than('sm') {
+    @include button-sm;
+  };
+
+  @include viewport-equal-to-and-smaller-than('xs') {
+    width: 100%;
+  };
+}
