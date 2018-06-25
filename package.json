@@ -1,0 +1,9 @@
+{
+  "name": "weave-ui",
+  "version": "1.0.0",
+  "description": "Weave UI Library",
+  "main": "weave.scss",
+  "repository": "git@github.com:yorthehunter/weave-ui.git",
+  "author": "yorthehunter <boru.design@gmail.com>",
+  "license": "UNLICENSED"
+}
