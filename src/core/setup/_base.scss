@@ -34,13 +34,6 @@ $weave-utilities--option: true !default;
   --ml: initial;
   --mr: initial;
   --z-index: 1;
-  --elevation: initial;
-  --border-radius: initial;
-  --bg-color: initial;
-  --font-color: initial;
-  --border-width: 1px;
-  --border-style: solid;
-  --border-color: currentColor;
   --display-as: block;
   --font-size: var(--type-size-f3);
   --line-height: var(--component-line-height-f3);
@@ -82,28 +75,6 @@ $weave-utilities--option: true !default;
   margin-bottom: var(--my);
 }
 
-@mixin border {
-  border-width: var(--border-width);
-  border-style: var(--border-style);
-  border-color: var(--border-color);
-}
-
-@mixin elevated {
-  z-index: var(--z-index);
-  box-shadow: var(--elevation);
-}
-
-@mixin rounded {
-  border-radius: var(--border-radius);
-}
-
-@mixin bg {
-  background-color: var(--bg-color);
-}
-
-@mixin color {
-  color: var(--font-color);
-}
 
 @mixin display-as {
   display: var(--display-as);
