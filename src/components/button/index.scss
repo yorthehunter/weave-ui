@@ -1,3 +1,5 @@
+@import '../core/setup/index';
+
 @mixin button {
   // Defaults
   --border-radius: var(--border-radius-default);

@@ -1,3 +1,5 @@
+@import '../core/setup/index';
+
 @mixin tag {
   --display-as: inline-flex;
   --border-radius: var(--border-radius-pill);

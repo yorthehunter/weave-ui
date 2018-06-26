@@ -1,3 +1,5 @@
+@import '../core/setup/index';
+
 // This makes it look like there's a fold in the ribbon.
 @mixin fold {
   --bg-color: var(--bg-transparent-dark);

@@ -1,3 +1,5 @@
+@import '../core/setup/index';
+
 $dropdown--bg: color(white);
 
 @mixin dropdown-menu {
