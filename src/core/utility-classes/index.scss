@@ -3,13 +3,7 @@
 // Utility classes get a pass on using !important, but please be aware that they
 // will likely override existing properties.
 
-@mixin weave-utilities {
-  @import
-    './base',
-    './decoration',
-    './typography';
-}
-
-@if $weave-utilities--option == true {
-  @include weave-utilities;
-}
+@import
+  './base',
+  './decoration',
+  './typography';

@@ -1,126 +1,132 @@
-// Block elements (like <div>) are full width by default. Be sure you're not
-// overriding anything important when using this.
-%full-width,
-.full-width {
-  width: 100% !important;
-  max-width: 100% !important;
-}
+@mixin weave-utilities {
+  // Block elements (like <div>) are full width by default. Be sure you're not
+  // overriding anything important when using this.
+  %full-width,
+  .full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
-// Forces full-width on an element for xs viewports. Useful when you simply
-// want a block of content for mobile viewports.
-@include viewport-equal-to-and-smaller-than(xs) {
-  %full-width--xs,
-  .full-width--xs {
-    width: 100%;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  // Forces full-width on an element for xs viewports. Useful when you simply
+  // want a block of content for mobile viewports.
+  @include viewport-equal-to-and-smaller-than(xs) {
+    %full-width--xs,
+    .full-width--xs {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  @each $size in ['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'none'] {
+    %p--#{$size},
+    .p--#{$size} {
+      --px: var(--spacing-#{$size}) !important;
+      --py: var(--spacing-#{$size}) !important;
+      --pt: var(--spacing-#{$size}) !important;
+      --pb: var(--spacing-#{$size}) !important;
+      --pl: var(--spacing-#{$size}) !important;
+      --pr: var(--spacing-#{$size}) !important;
+      @include padding;
+    }
+
+    %px--#{$size},
+    .px--#{$size} {
+      --px: var(--spacing-#{$size}) !important;
+      padding-left: var(--px);
+      padding-right: var(--px);
+    }
+
+    %py--#{$size},
+    .py--#{$size} {
+      --py: var(--spacing-#{$size}) !important;
+      padding-top: var(--py);
+      padding-bottom: var(--py);
+    }
+
+    %pt--#{$size},
+    .pt--#{$size} {
+      --pt: var(--spacing-#{$size}) !important;
+      padding-top: var(--pt);
+    }
+
+    %pb--#{$size},
+    .pb--#{$size} {
+      --pb: var(--spacing-#{$size}) !important;
+      padding-bottom: var(--pb);
+    }
+
+    %pl--#{$size},
+    .pl--#{$size} {
+      --pl: var(--spacing-#{$size}) !important;
+      padding-left: var(--pl);
+    }
+
+    %pr--#{$size},
+    .pr--#{$size} {
+      --pr: var(--spacing-#{$size}) !important;
+      padding-right: var(--pr);
+    }
+
+    %m--#{$size},
+    .m--#{$size} {
+      --my: var(--spacing-#{$size}) !important;
+      --mx: var(--spacing-#{$size}) !important;
+      --mt: var(--spacing-#{$size}) !important;
+      --mb: var(--spacing-#{$size}) !important;
+      --ml: var(--spacing-#{$size}) !important;
+      --mr: var(--spacing-#{$size}) !important;
+      @include margin;
+    }
+
+    %mx--#{$size},
+    .mx--#{$size} {
+      --mx: var(--spacing-#{$size}) !important;
+      margin-left: var(--mx);
+      margin-right: var(--mx);
+    }
+
+    %my--#{$size},
+    .my--#{$size} {
+      --my: var(--spacing-#{$size}) !important;
+      margin-top: var(--my);
+      margin-bottom: var(--my);
+    }
+
+    %mt--#{$size},
+    .mt--#{$size} {
+      --mt: var(--spacing-#{$size}) !important;
+      margin-top: var(--mt);
+    }
+
+    %mb--#{$size},
+    .mb--#{$size} {
+      --mb: var(--spacing-#{$size}) !important;
+      margin-bottom: var(--mb);
+    }
+
+    %ml--#{$size},
+    .ml--#{$size} {
+      --ml: var(--spacing-#{$size}) !important;
+      margin-left: var(--ml);
+    }
+
+    %mr--#{$size},
+    .mr--#{$size} {
+      --mr: var(--spacing-#{$size}) !important;
+      margin-right: var(--mr);
+    }
+  }
+
+  // Use this to hide an element but allow it to still be readable in the DOM
+  // e.g. for screenreaders
+  %hidden-from-sight,
+  .hidden-from-sight {
+    position: absolute !important;
+    left: -200vw;
   }
 }
 
-@each $size in ['xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'none'] {
-  %p--#{$size},
-  .p--#{$size} {
-    --px: var(--spacing-#{$size}) !important;
-    --py: var(--spacing-#{$size}) !important;
-    --pt: var(--spacing-#{$size}) !important;
-    --pb: var(--spacing-#{$size}) !important;
-    --pl: var(--spacing-#{$size}) !important;
-    --pr: var(--spacing-#{$size}) !important;
-    @include padding;
-  }
-
-  %px--#{$size},
-  .px--#{$size} {
-    --px: var(--spacing-#{$size}) !important;
-    padding-left: var(--px);
-    padding-right: var(--px);
-  }
-
-  %py--#{$size},
-  .py--#{$size} {
-    --py: var(--spacing-#{$size}) !important;
-    padding-top: var(--py);
-    padding-bottom: var(--py);
-  }
-
-  %pt--#{$size},
-  .pt--#{$size} {
-    --pt: var(--spacing-#{$size}) !important;
-    padding-top: var(--pt);
-  }
-
-  %pb--#{$size},
-  .pb--#{$size} {
-    --pb: var(--spacing-#{$size}) !important;
-    padding-bottom: var(--pb);
-  }
-
-  %pl--#{$size},
-  .pl--#{$size} {
-    --pl: var(--spacing-#{$size}) !important;
-    padding-left: var(--pl);
-  }
-
-  %pr--#{$size},
-  .pr--#{$size} {
-    --pr: var(--spacing-#{$size}) !important;
-    padding-right: var(--pr);
-  }
-
-  %m--#{$size},
-  .m--#{$size} {
-    --my: var(--spacing-#{$size}) !important;
-    --mx: var(--spacing-#{$size}) !important;
-    --mt: var(--spacing-#{$size}) !important;
-    --mb: var(--spacing-#{$size}) !important;
-    --ml: var(--spacing-#{$size}) !important;
-    --mr: var(--spacing-#{$size}) !important;
-    @include margin;
-  }
-
-  %mx--#{$size},
-  .mx--#{$size} {
-    --mx: var(--spacing-#{$size}) !important;
-    margin-left: var(--mx);
-    margin-right: var(--mx);
-  }
-
-  %my--#{$size},
-  .my--#{$size} {
-    --my: var(--spacing-#{$size}) !important;
-    margin-top: var(--my);
-    margin-bottom: var(--my);
-  }
-
-  %mt--#{$size},
-  .mt--#{$size} {
-    --mt: var(--spacing-#{$size}) !important;
-    margin-top: var(--mt);
-  }
-
-  %mb--#{$size},
-  .mb--#{$size} {
-    --mb: var(--spacing-#{$size}) !important;
-    margin-bottom: var(--mb);
-  }
-
-  %ml--#{$size},
-  .ml--#{$size} {
-    --ml: var(--spacing-#{$size}) !important;
-    margin-left: var(--ml);
-  }
-
-  %mr--#{$size},
-  .mr--#{$size} {
-    --mr: var(--spacing-#{$size}) !important;
-    margin-right: var(--mr);
-  }
-}
-
-// Use this to hide an element but allow it to still be readable in the DOM
-// e.g. for screenreaders
-%hidden-from-sight,
-.hidden-from-sight {
-  position: absolute !important;
-  left: -200vw;
+@if $weave-utilities--option == true {
+  @include weave-utilities;
 }
