@@ -4,7 +4,7 @@
   --bg-color: var(--bg-transparent-dark);
   --font-size: var(--type-size-f1);
   --line-height: var(--component-line-height-f1);
-  --font-color: #{$color-white};
+  --font-color: var(--white);
   --z-index: var(--z-index-5);
   --border-radius: var(--border-radius-default);
   --display-as: table; // Layout fix
@@ -20,7 +20,7 @@
   @include display-as;
 
   visibility: hidden;
-  text-shadow: 0 1px 0 #{$color-black};
+  text-shadow: 0 1px 0 var(--black);
   white-space: nowrap;
   pointer-events: none; // Unclickable
 

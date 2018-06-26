@@ -11,7 +11,7 @@
   --py: var(--spacing-md);
   --px: var(--spacing-md);
   --elevation: var(--elevated-0);
-  --bg-color: #{$color-white};
+  --bg-color: var(--white);
   --border-radius: var(--border-radius-default);
 
   @include border;
@@ -81,7 +81,7 @@
 .weave-collection--hoverable > .weave-collection__item {
   &:hover {
     --elevation: var(--elevated-1);
-    --bg-color: #{$color-white};
+    --bg-color: var(--white);
     @include transition(box-shadow);
     @include elevated;
     @include bg;
@@ -90,7 +90,7 @@
   &.is-active {
     --elevation: var(--elevated-1);
     --z-index: var(--z-index-1);
-    --bg-color: #{$color-black-10};
+    --bg-color: var(--bg-transparent-lightest);
     @include elevated;
     @include bg;
   }

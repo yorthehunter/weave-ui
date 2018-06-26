@@ -9,7 +9,7 @@
 @mixin card {
   --elevation: var(--elevated-1);
   --border-radius: var(--border-radius-default);
-  --bg-color: #{$color-white};
+  --bg-color: var(--white);
   --border: var(--border-neutral);
 
   @include elevated;

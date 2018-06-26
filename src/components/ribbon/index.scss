@@ -10,7 +10,7 @@
 }
 
 @mixin ribbon {
-  --bg-color: #{$color-grape};
+  --bg-color: var(--callout-secondary-color);
   --display-as: inline-flex;
   --font-color: var(--text-on-dark-bg);
 

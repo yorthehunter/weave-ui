@@ -26,7 +26,7 @@ $popover-triangle-height: .5rem;
 
 @mixin popover {
   --elevation: var(--elevated-3);
-  --popover-bg: #{$color-white};
+  --popover-bg: var(--white);
   --bg-color: var(--popover-bg);
   --px: var(--spacing-lg);
   --py: var(--spacing-lg);

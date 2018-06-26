@@ -3,7 +3,7 @@
   --display-as: inline-flex;
   --bg-color: var(--text-neutral-color);
   --border-radius: var(--border-radius-default);
-  --font-color: #{$color-black};
+  --font-color: var(--black);
 
   // Default to medium size if no modifier added
   @include label-md;

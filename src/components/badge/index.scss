@@ -10,12 +10,12 @@
   --display-as: inline-flex;
   --elevation: var(--elevated-1);
   --z-index: var(--z-index-1);
-  --font-color: #{$color-white};
-  --bg-color: #{$color-watermelon};
+  --font-color: var(--white);
+  --bg-color: var(--callout-color);
   --font-size: var(--type-size-f0);
   --line-height: var(--component-line-height-f0);
   --size: 1rem;
-  
+
   @include typeset;
   @include display-as;
   @include color;

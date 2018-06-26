@@ -2,9 +2,9 @@
   // Defaults
   --border-radius: var(--border-radius-default);
   --display-as: inline-flex;
-  --font-color: #{$color-white};
-  --bg-color: #{$color-gray};
-  --bg-color-hover: #{lighten($color-gray, 10%)};
+  --font-color: var(--white);
+  --bg-color: var(--button-neutral);
+  --bg-color-hover: var(--button-neutral-hover);
   --elevation: var(--elevated-1);
   --border-width: 0;
   --font-size: var(--type-size-f2);
@@ -82,26 +82,26 @@
 }
 
 .weave-button--cta {
-  --bg-color: #{$color-watermelon};
-  --bg-color-hover: #{lighten($color-watermelon, 10%)};
+  --bg-color: var(--button-cta);
+  --bg-color-hover: var(--button-cta-hover);
 }
 
 .weave-button--primary {
-  --bg-color: #{$color-blueberry};
-  --bg-color-hover: #{lighten($color-blueberry, 10%)};
+  --bg-color: var(--button-primary);
+  --bg-color-hover: var(--button-primary-hover);
 }
 
 .weave-button--secondary {
-  --font-color: #{$color-black};
-  --bg-color: #{$color-white};
-  --bg-color-hover: #{$color-white};
+  --font-color: var(--black);
+  --bg-color: var(--button-secondary);
+  --bg-color-hover: var(--button-secondary-hover);
 }
 
 .weave-button--flat {
   --font-color: var(--link-color);
-  --bg-color: transparent;
+  --bg-color: var(--button-flat);
   --elevation: var(--elevated-0);
-  --bg-color-hover: #{$color-black-10};
+  --bg-color-hover: var(--button-flat-hover);
 }
 
 .weave-button--xs { @include button-xs; }

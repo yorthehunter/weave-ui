@@ -6,7 +6,7 @@
 }
 
 .weave-progress {
-  --bg-color: #{$color-black-10};
+  --bg-color: var(--bg-transparent-lightest);
   --border-radius: var(--border-radius-default);
   --progress-bar-color: var(--border-accent-color);
 

@@ -8,7 +8,7 @@ $dropdown--bg: color(white);
   --my: var(--spacing-sm);
   --px: var(--spacing-none);
   --position: absolute;
-  --bg-color: #{$color-white};
+  --bg-color: var(--white);
 
   @include unstyled-list;
   @include rounded;
@@ -49,7 +49,7 @@ $dropdown--bg: color(white);
     }
 
     &:hover {
-      --bg-color: #{$color-gray-lightest};
+      --bg-color: var(--neutral-color);
       @include bg;
     }
   }

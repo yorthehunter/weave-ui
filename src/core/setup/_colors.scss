@@ -31,6 +31,9 @@ $color-white-25: rgba(255, 255, 255, .25);
 
 // Defaults
 :root {
+  --white: var(--white);
+  --black: #{$color-black};
+
   --text-color: #{$color-gray-dark};
   --text-secondary-color: #{$color-gray};
   --text-accent-color: #{$color-mint-dark};
@@ -39,7 +42,7 @@ $color-white-25: rgba(255, 255, 255, .25);
   --text-warning-color: #{$color-watermelon};
   --text-info-color: #{$color-grape};
   --text-neutral-color: #{$color-gray};
-  --text-on-dark-bg: #{$color-white};
+  --text-on-dark-bg: var(--white);
   --text-on-light-bg: #{$color-black};
 
   --link-color: #{$color-blueberry};
@@ -50,6 +53,8 @@ $color-white-25: rgba(255, 255, 255, .25);
   --info-color: #{$color-mint-lightest};
   --warning-color: #{$color-banana};
   --neutral-color: #{$color-gray-lightest};
+  --callout-color: #{$color-watermelon};
+  --callout-secondary-color: #{$color-grape};
 
   --border-accent-color: #{$color-mint};
   --border-success-color: #{$color-kiwi};
@@ -67,4 +72,17 @@ $color-white-25: rgba(255, 255, 255, .25);
   --color-neutral-2: #{$color-gray-light};
   --color-neutral-3: #{$color-gray};
   --color-neutral-4: #{$color-gray-dark};
+}
+
+:root {
+  --button-neutral: #{$color-gray};
+  --button-neutral-hover: #{lighten($color-gray, 10%)};
+  --button-primary: #{$color-blueberry};
+  --button-primary-hover: #{lighten($color-blueberry, 10%)};
+  --button-secondary: #{$color-white};
+  --button-secondary-hover: #{$color-white};
+  --button-cta: #{$color-watermelon};
+  --button-cta-hover: #{lighten($color-watermelon, 10%)};
+  --button-flat: transparent;
+  --button-flat-hover: var(--bg-transparent-lightest);
 }

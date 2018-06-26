@@ -18,16 +18,16 @@
 
   tr {
     --border-width: 0;
-    --bg-color: #{$color-white-85};
+    --bg-color: var(--white);
     @include border;
     @include bg;
 
     &:nth-child(odd) {
-      --bg-color: #{$color-white-85};
+      --bg-color: var(--white);
     }
 
     &:nth-child(even) {
-      --bg-color: #{$color-white-85};
+      --bg-color: var(--white);
     }
   }
 
@@ -59,14 +59,14 @@
   > tbody > tr:nth-child(odd),
   > tfoot > tr:nth-child(odd),
   > tr:nth-child(odd) {
-    --bg-color: #{$color-white};
+    --bg-color: var(--white);
   }
 
   > thead > tr:nth-child(even),
   > tbody > tr:nth-child(even),
   > tfoot > tr:nth-child(even),
   > tr:nth-child(even) {
-    --bg-color: #{$color-gray-lightest};
+    --bg-color: var(--color-neutral-1);
   }
 }
 
