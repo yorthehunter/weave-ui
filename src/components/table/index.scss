@@ -1,5 +1,3 @@
-@import '../../core/index';
-
 // $table-row-border: 1px solid color(gray-light);
 // $table-row-bg--hover: color(black-10);
 // $table-row-bg--stripe: color(gray-lightest);
@@ -9,7 +7,7 @@
 // $table-padding--condensed: space(sm) space(sm);
 // $table-padding--none: 0;
 
-@mixin weave-table {
+@mixin table {
   --font-size: var(--type-size-f2);
   --line-height: var(--component-line-height-f2);
   --text-align: left;
@@ -43,7 +41,7 @@
 }
 
 .weave-table {
-  @include weave-table;
+  @include table;
 }
 
 .weave-table--bordered {

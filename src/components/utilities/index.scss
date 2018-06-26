@@ -1,5 +1,3 @@
-@import '../../core/index.scss';
-
 // Utilities are classes that help lay out a UI properly. They should be used
 // as classes or extended as you see fit.
 // Utility classes get a pass on using !important, but please be aware that they
@@ -133,37 +131,6 @@
     left: -200vw;
   }
 
-  %separator,
-  .separator {
-    --border-color: #{$color-gray-light};
-    @include border;
-    // When inside a flex box, stretch to fit height
-    align-self: stretch;
-  }
-
-  %separator--dark,
-  .separator--dark {
-    --border-color: #{$color-gray-dark};
-  }
-
-  %separator--vertical,
-  .separator--vertical {
-    --ml: var(--spacing-sm);
-    --mr: var(--spacing-sm);
-    --border-width: 0px 1px 0px 0px;
-    width: 0px;
-    @include margin;
-  }
-
-  %separator--horizontal,
-  .separator--horizontal {
-    --mt: var(--spacing-sm);
-    --mb: calc(var(--spacing-sm) - 1px);
-    --border-width: 1px 0px 0px 0px;
-    height: 0px;
-    @include margin;
-  }
-
   %text-center,
   .text-center {
     text-align: center;
@@ -179,7 +146,6 @@
     color: var(--text-secondary-color);
     font-style: italic;
   }
-
 }
 
 @if $weave-utilities--option == true {

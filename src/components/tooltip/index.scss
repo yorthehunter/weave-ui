@@ -1,6 +1,4 @@
-@import '../../core/index';
-
-@mixin weave-tooltip {
+@mixin tooltip {
   --py: var(--spacing-sm);
   --px: var(--spacing-sm);
   --bg-color: var(--bg-transparent-dark);
@@ -32,7 +30,7 @@
 }
 
 .weave-tooltip {
-  @include weave-tooltip;
+  @include tooltip;
 }
 
 
@@ -47,7 +45,7 @@
     --position: absolute;
 
     @include position;
-    @include weave-tooltip;
+    @include tooltip;
 
     bottom: 100%;
     left: 50%;

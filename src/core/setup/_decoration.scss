@@ -36,42 +36,42 @@
   @include border;
 }
 
-@mixin weave-accent-field {
+@mixin accent-field {
   --bg-color: var(--accent-color);
   --font-color: var(--text-on-dark-bg);
   --border-width: 0;
   @include field;
 }
 
-@mixin weave-error-field {
+@mixin error-field {
   --bg-color: var(--error-color);
   --font-color: var(--text-on-dark-bg);
   --border-width: 0;
   @include field;
 }
 
-@mixin weave-warning-field {
+@mixin warning-field {
   --bg-color: var(--warning-color);
   --font-color: var(--text-on-light-bg);
   --border-width: 0;
   @include field;
 }
 
-@mixin weave-success-field {
+@mixin success-field {
   --bg-color: var(--success-color);
   --font-color: var(--text-on-light-bg);
   --border-width: 0;
   @include field;
 }
 
-@mixin weave-info-field {
+@mixin info-field {
   --bg-color: var(--info-color);
   --font-color: var(--text-on-light-bg);
   --border-width: 0;
   @include field;
 }
 
-@mixin weave-neutral-field {
+@mixin neutral-field {
   --bg-color: var(--neutral-color);
   --font-color: var(--text-on-light-bg);
   --border-color: var(--border-neutral-color);

@@ -1,16 +1,14 @@
-@import '../../core/index';
-
-@mixin weave-label {
+@mixin label {
   // Defaults
   --display-as: inline-flex;
   --bg-color: var(--text-neutral-color);
   --border-radius: var(--border-radius-default);
   --font-color: #{$color-black};
-  
+
   // Default to medium size if no modifier added
-  @include weave-label-md;
+  @include label-md;
   // Default to neutral decoration if no modifier added
-  @include weave-neutral-field;
+  @include neutral-field;
   @include display-as;
   @include rounded;
   @include bg;
@@ -20,21 +18,21 @@
   @include px;
 }
 
-@mixin weave-label-sm {
+@mixin label-sm {
   --py: var(--spacing-none);
   --px: var(--spacing-xs);
   --font-size: var(--type-size-f0);
   --line-height: var(--component-line-height-f0);
 }
 
-@mixin weave-label-md {
+@mixin label-md {
   --py: var(--spacing-xs);
   --px: var(--spacing-sm);
   --font-size: var(--type-size-f1);
   --line-height: var(--component-line-height-f1);
 }
 
-@mixin weave-label-lg {
+@mixin label-lg {
   --py: var(--spacing-sm);
   --px: var(--spacing-md);
   --font-size: var(--type-size-f2);
@@ -42,30 +40,30 @@
 }
 
 .weave-label {
-  @include weave-label;
+  @include label;
 }
 
-.weave-label--accent  { @include weave-accent-field; }
-.weave-label--success { @include weave-success-field; }
-.weave-label--error   { @include weave-error-field; }
-.weave-label--info    { @include weave-info-field; }
-.weave-label--warning { @include weave-warning-field; }
-.weave-label--neutral { @include weave-neutral-field; }
+.weave-label--accent  { @include accent-field; }
+.weave-label--success { @include success-field; }
+.weave-label--error   { @include error-field; }
+.weave-label--info    { @include info-field; }
+.weave-label--warning { @include warning-field; }
+.weave-label--neutral { @include neutral-field; }
 
-.weave-label--sm { @include weave-label-sm; }
-.weave-label--md { @include weave-label-md; }
-.weave-label--lg { @include weave-label-lg; }
+.weave-label--sm { @include label-sm; }
+.weave-label--md { @include label-md; }
+.weave-label--lg { @include label-lg; }
 
 .weave-label--responsive {
   @include viewport-equal-to-and-smaller-than('full') {
-    @include weave-label-lg;
+    @include label-lg;
   };
 
   @include viewport-equal-to-and-smaller-than('lg') {
-    @include weave-label-md;
+    @include label-md;
   };
 
   @include viewport-equal-to-and-smaller-than('sm') {
-    @include weave-label-sm;
+    @include label-sm;
   };
 }

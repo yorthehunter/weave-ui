@@ -1,5 +1,3 @@
-@import '../../core/index';
-
 // Offset forces that very Material Design look
 $spinner-offset:   187;
 // Duration is the timing of the full rotation
@@ -7,7 +5,7 @@ $spinner-duration: 1.8s;
 
 @import "./animations.scss";
 
-@mixin weave-spinner {
+@mixin spinner {
   --bg-color: var(--border-accent-color);
   width: var(--size);
   height: var(--size);
@@ -25,24 +23,24 @@ $spinner-duration: 1.8s;
   }
 }
 
-@mixin weave-spinner-lg { --size: 8rem; }
-@mixin weave-spinner-md { --size: 4rem; }
-@mixin weave-spinner-sm { --size: 2rem; }
-@mixin weave-spinner-xs { --size: 1rem; }
+@mixin spinner-lg { --size: 8rem; }
+@mixin spinner-md { --size: 4rem; }
+@mixin spinner-sm { --size: 2rem; }
+@mixin spinner-xs { --size: 1rem; }
 
 .weave-spinner {
-  @include weave-spinner;
-  @include weave-spinner-md;
+  @include spinner;
+  @include spinner-md;
 }
 
-.weave-spinner--lg { @include weave-spinner-lg; }
-.weave-spinner--md { @include weave-spinner-md; }
-.weave-spinner--sm { @include weave-spinner-sm; }
-.weave-spinner--xs { @include weave-spinner-xs; }
+.weave-spinner--lg { @include spinner-lg; }
+.weave-spinner--md { @include spinner-md; }
+.weave-spinner--sm { @include spinner-sm; }
+.weave-spinner--xs { @include spinner-xs; }
 
 .weave-spinner--responsive {
-  @include viewport-equal-to-and-smaller-than('full') { @include weave-spinner-lg; };
-  @include viewport-equal-to-and-smaller-than('lg')   { @include weave-spinner-md; };
-  @include viewport-equal-to-and-smaller-than('sm')   { @include weave-spinner-sm; };
-  @include viewport-equal-to-and-smaller-than('xs')   { @include weave-spinner-xs; };
+  @include viewport-equal-to-and-smaller-than('full') { @include spinner-lg; };
+  @include viewport-equal-to-and-smaller-than('lg')   { @include spinner-md; };
+  @include viewport-equal-to-and-smaller-than('sm')   { @include spinner-sm; };
+  @include viewport-equal-to-and-smaller-than('xs')   { @include spinner-xs; };
 }

@@ -1,8 +1,6 @@
-@import '../../core/index';
-
 $dropdown--bg: color(white);
 
-@mixin weave-dropdown-menu {
+@mixin dropdown-menu {
   --border-radius: var(--border-radius-default);
   --elevation: var(--elevated-1);
   --font-size: var(--type-size-f3);
@@ -58,7 +56,7 @@ $dropdown--bg: color(white);
 }
 
 .weave-dropdown-menu {
-  @include weave-dropdown-menu;
+  @include dropdown-menu;
 }
 
 .weave-has-dropdown {

@@ -1,43 +1,5 @@
-@import '../../core/index';
-
-@mixin weave-ribbon {
-  // Default to medium size if no modifier added
-  @include weave-ribbon-md;
-  @include bg;
-  @include display-as;
-  @include color;
-  @include py;
-  @include px;
-  @include typeset;
-  @include position;
-}
-
-@mixin weave-ribbon-sm {
-  --py: var(--spacing-xs);
-  --px: var(--spacing-xs);
-  --font-size: var(--type-size-f0);
-  --line-height: var(--component-line-height-f0);
-}
-
-@mixin weave-ribbon-md {
-  --py: var(--spacing-sm);
-  --px: var(--spacing-sm);
-  --font-size: var(--type-size-f1);
-  --line-height: var(--component-line-height-f1);
-}
-
-@mixin weave-ribbon-lg {
-  --py: var(--spacing-md);
-  --px: var(--spacing-md);
-  --font-size: var(--type-size-f2);
-  --line-height: var(--component-line-height-f2);
-}
-
-$fold-size: var(--spacing-xs);
-$ribbon-overlap: calc(var(--spacing-xs) * -1);
-
 // This makes it look like there's a fold in the ribbon.
-@mixin weave-fold {
+@mixin fold {
   --bg-color: var(--bg-transparent-dark);
   --position: absolute;
   @include bg;
@@ -47,16 +9,52 @@ $ribbon-overlap: calc(var(--spacing-xs) * -1);
   width: $fold-size;
 }
 
-.weave-ribbon {
+@mixin ribbon {
   --bg-color: #{$color-grape};
   --display-as: inline-flex;
   --font-color: var(--text-on-dark-bg);
 
-  @include weave-ribbon;
+  // Default to medium size if no modifier added
+  @include ribbon-md;
+  @include bg;
+  @include display-as;
+  @include color;
+  @include py;
+  @include px;
+  @include typeset;
+  @include position;
 
   &::after {
-    @include weave-fold;
+    @include fold;
   }
+}
+
+@mixin ribbon-sm {
+  --py: var(--spacing-xs);
+  --px: var(--spacing-xs);
+  --font-size: var(--type-size-f0);
+  --line-height: var(--component-line-height-f0);
+}
+
+@mixin ribbon-md {
+  --py: var(--spacing-sm);
+  --px: var(--spacing-sm);
+  --font-size: var(--type-size-f1);
+  --line-height: var(--component-line-height-f1);
+}
+
+@mixin ribbon-lg {
+  --py: var(--spacing-md);
+  --px: var(--spacing-md);
+  --font-size: var(--type-size-f2);
+  --line-height: var(--component-line-height-f2);
+}
+
+$fold-size: var(--spacing-xs);
+$ribbon-overlap: calc(var(--spacing-xs) * -1);
+
+.weave-ribbon {
+  @include ribbon;
 }
 
 .weave-ribbon--overlay {
@@ -116,20 +114,20 @@ $ribbon-overlap: calc(var(--spacing-xs) * -1);
   }
 }
 
-.weave-ribbon--sm { @include weave-ribbon-sm; }
-.weave-ribbon--md { @include weave-ribbon-md; }
-.weave-ribbon--lg { @include weave-ribbon-lg; }
+.weave-ribbon--sm { @include ribbon-sm; }
+.weave-ribbon--md { @include ribbon-md; }
+.weave-ribbon--lg { @include ribbon-lg; }
 
 .weave-ribbon--responsive {
   @include viewport-equal-to-and-smaller-than('full') {
-    @include weave-ribbon-lg;
+    @include ribbon-lg;
   };
 
   @include viewport-equal-to-and-smaller-than('lg') {
-    @include weave-ribbon-md;
+    @include ribbon-md;
   };
 
   @include viewport-equal-to-and-smaller-than('sm') {
-    @include weave-ribbon-sm;
+    @include ribbon-sm;
   };
 }

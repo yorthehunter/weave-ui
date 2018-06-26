@@ -1,11 +1,21 @@
-@import '../../core/index';
 
 // Badge
 //
 // Used to indicate that something has changed “behind the scenes” and that a
 // user should address the issue in order to dismiss the badge
 
-@mixin weave-badge {
+@mixin badge {
+  // Defaults
+  --border-radius: var(--border-radius-circle);
+  --display-as: inline-flex;
+  --elevation: var(--elevated-1);
+  --z-index: var(--z-index-1);
+  --font-color: #{$color-white};
+  --bg-color: #{$color-watermelon};
+  --font-size: var(--type-size-f0);
+  --line-height: var(--component-line-height-f0);
+  --size: 1rem;
+  
   @include typeset;
   @include display-as;
   @include color;
@@ -29,17 +39,7 @@
 }
 
 .weave-badge {
-  // Defaults
-  --border-radius: var(--border-radius-circle);
-  --display-as: inline-flex;
-  --elevation: var(--elevated-1);
-  --z-index: var(--z-index-1);
-  --font-color: #{$color-white};
-  --bg-color: #{$color-watermelon};
-  --font-size: var(--type-size-f0);
-  --line-height: var(--component-line-height-f0);
-  --size: 1rem;
-  @include weave-badge;
+  @include badge;
 }
 
 .weave-badge--inline {

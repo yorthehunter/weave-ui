@@ -1,7 +1,6 @@
-@import '../../core/index';
 @import './animations';
 
-@mixin weave-progress {
+@mixin progress {
   @include bg;
   @include position;
 }
@@ -11,7 +10,7 @@
   --border-radius: var(--border-radius-default);
   --progress-bar-color: var(--border-accent-color);
 
-  @include weave-progress;
+  @include progress;
   height: var(--spacing-sm);
   overflow: hidden;
 }
