@@ -15,12 +15,17 @@
   }
 
   body {
-    color: var(--text-color);
-    font-family: var(--font-family-default);
+    --font-family: var(--font-family-default);
+    --font-color: var(--text-color);
+
+    @include color;
+    @include font-family;
   }
 
   a {
-    color: var(--link-color);
+    --font-color: var(--text-color);
+
+    @include color;
     text-decoration: underline;
     text-decoration-skip-ink: auto;
   }

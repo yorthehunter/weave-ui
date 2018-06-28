@@ -41,6 +41,10 @@ $weave-utilities--option: true !default;
   --text-align: left;
 }
 
+@mixin font-family {
+  font-family: var(--font-family);
+}
+
 @mixin padding {
   padding-top: var(--pt);
   padding-bottom: var(--pb);
