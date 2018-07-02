@@ -35,7 +35,6 @@
     @include display-as;
 
     > a {
-      --font-color: var(--link-color);
       --display-as: block;
       --my: calc(var(--spacing-sm) * -1);
       --mx: calc(var(--spacing-md) * -1);

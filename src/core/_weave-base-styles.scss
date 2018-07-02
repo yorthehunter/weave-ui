@@ -23,7 +23,7 @@
   }
 
   a {
-    --font-color: var(--text-color);
+    --font-color: var(--link-color);
 
     @include color;
     text-decoration: underline;
