@@ -9,6 +9,7 @@
   --px: var(--spacing-none);
   --position: absolute;
   --bg-color: var(--white);
+  --z-index: var(--z-index-1);
 
   @include unstyled-list;
   @include rounded;
