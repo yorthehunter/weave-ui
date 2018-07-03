@@ -36,6 +36,12 @@
   margin-right: 0;
 }
 
+.weave-container--xs { @include container-xs; }
+.weave-container--sm { @include container-sm; }
+.weave-container--md { @include container-md; }
+.weave-container--lg { @include container-lg; }
+.weave-container--xl { @include container-xl; }
+
 .weave-container--responsive {
   @include viewport-equal-to-and-smaller-than('full') {
     @include container-xl;
