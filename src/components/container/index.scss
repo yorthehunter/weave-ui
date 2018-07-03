@@ -1,0 +1,57 @@
+// The container will "contain" content to the various defined breakpoints
+:root {
+  --container-padding: var(--spacing-sm);
+}
+
+@mixin container {
+  // Defaults
+  --px: var(--container-padding);
+  --mx: auto;
+
+  @include px;
+  @include mx;
+
+  // Will default to full size of parent element
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin container-xs { max-width: map-deep-get($breakpoint-map, xs, max-width); }
+@mixin container-sm { max-width: map-deep-get($breakpoint-map, sm, max-width); }
+@mixin container-md { max-width: map-deep-get($breakpoint-map, md, max-width); }
+@mixin container-lg { max-width: map-deep-get($breakpoint-map, lg, max-width); }
+@mixin container-xl { max-width: map-deep-get($breakpoint-map, xl, max-width); }
+
+.weave-container {
+  @include container;
+}
+
+.weave-container--left {
+  margin-left: 0;
+}
+
+.weave-container--right {
+  margin-right: 0;
+}
+
+.weave-container--responsive {
+  @include viewport-equal-to-and-smaller-than('full') {
+    @include container-xl;
+  };
+
+  @include viewport-equal-to-and-smaller-than('xl') {
+    @include container-lg;
+  };
+
+  @include viewport-equal-to-and-smaller-than('lg') {
+    @include container-md;
+  };
+
+  @include viewport-equal-to-and-smaller-than('md') {
+    @include container-sm;
+  };
+
+  @include viewport-equal-to-and-smaller-than('sm') {
+    @include container-xs;
+  };
+}
